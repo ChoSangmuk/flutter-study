@@ -1,0 +1,76 @@
+# Flutter & Dart 
+
+- KITRI 강의를 통해 배운 내용을 정리하기 위해 작성된 자료입니다.
+- 잘못된 내용, 추가가 필요한 내용은 이메일을 통해 전달바랍니다.
+
+## 모바일 앱 개발
+- 네이티브 앱 
+  - iOS의 Object-C 혹은 Swift, Android의 java 혹은 kotlin를 이용하여 해당 운영 체제에 가장 적합하고 일반적인 앱 개발 방법
+  - 해당 운영 체제에 맞는 API를 이용하여 구현하기 떄문에 기기가 가진 고유의 모든 기능을 사용 가능, 다른 방식에 비해 성능적으로 우수
+  - But, 두 가지 주요 운영체제(Android, iOS)를 모두 능숙히 다루는 사람이 적고, 각각의 전문가를 필요로 한다는 점에서 규모가 작은, 경험이 충분하지 않은 그룹의 경우 네이티브 앱을 제공하기 어려움
+
+- 하이브리드 앱
+  - 통상적인 웹 개발을 형태를 그대로 가지고 온 방법, 웹뷰를 이용
+  - Ionic이 대표적, 빠른개발이 가능하지만 성능 측면에서 미흡
+
+- 크로스플랫폼 앱
+  - 네이티브가 아닌 언어로 코딩한 후, 이를 각각의 운영체제에 맞게끔 변환시켜주는 플랫폼을 이용한 앱
+  - 리액트 네이티브와 flutter(dart)가 이에 속함. 
+  - 이후 리액트 네이티브와 비교 예정
+
+## 환경 설정
+- 개발 PC 사양 및 환경
+  - Android와 iOS 모두 사용하는 대신 제한적이지만 웹 테스트 환경에서 개발을 진행
+  - [참고 링크](https://medium.com/flutter-korea/flutter-vscode%EB%A1%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-edbe44a178c5)
+```
+운영체제     macOS Big Sur 11.2.1
+모델명       MacBook Air(13-inch, Early 2015)
+프로세서     1.6GHz 듀얼 코어 Intel Core i5
+메모리       8GB 1600 MHz DDR3
+그래픽       Intel HD Graphics 6000 1536 MB
+
+기타        Android Studio & Xcode  (미사용)
+          iOS 시뮬레이터, Android 에뮬레이터 (미사용)
+          VSCode 사용, 크롬 웹 환경을 통해 테스트 진행 
+```
+
+<br>1. Flutter [SDK 다운 링크](https://flutter-ko.dev/) (2021년 4월 기준)
+<br>시작하기 
+<br>![web_home](image_for_md/web_home.png)
+<br>각 PC에 맞는 OS 선택 
+<br>![web_start](image_for_md/web_start.png)
+<br>flutter_macos_2.0.5-stable.zip 다운로드
+<br>![web_download](image_for_md/web_download.png)
+
+<br>2. 사용할 폴더에 압축 해제
+<br>SDK를 저장할 장소를 선택하여 압축 해제, 해제시 아래와 유사한 내용이 포함됨(폴더명 flutterd)
+<br>![sdk_folder](image_for_md/sdk_folder.png)
+
+<br>3. 환경변수에 flutter/bin 추가
+```sh
+export PATH="$PATH:`pwd`/flutter/bin"
+```
+
+<br>4. flutter doctor 실행
+<br>설치 혹은 설정이 필요하다고 필요하다고 생각되는 부분은 진행
+<br>![doctor](image_for_md/doctor.png)
+
+<br>5. VSCode [설치 링크](https://code.visualstudio.com/)
+<br>각 운영 체제에 맞는 버전 설치
+
+<br>6. extension에서 flutter플러그인을 설치 후 재 실행
+<br>![extension](image_for_md/extension.png)
+
+## hello_flutter
+Flutter의 가장 기본이 되는 프로젝트로 이 Git repository 에 저장된 모든 프로젝트는 해당 프로젝트를 수정하여 발전시킨 형태
+
+<br>1. VSCode 에서 command + Shift + P
+<br>2. Flutter: New Application Project
+<br>3. 프로젝트 생성 폴더 선택
+<br>4. 프로젝트명 입력
+<br>5. 3.)에서 선택한 폴더 하위에 프로젝트 파일이 생성됨
+<br>6. VSCode가 재 실행되며 프로젝트 파일이 열림
+<br>7. 필요에 따라 flutter SDK 경로를 입력
+<br>8. main.dart 파일이 자동으로 열리면 Run / Start Debugging 
+<br>9. 별도의 시작 환경을 지정하지 않으면 크롬 웹에 flutter 기본 앱이 나오게 됨
+
