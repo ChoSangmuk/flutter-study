@@ -1,4 +1,4 @@
-# Flutter & Dart 
+# Flutter
 
 - KITRI 강의를 통해 배운 내용을 정리하기 위해 작성된 자료입니다.
 - 잘못된 내용, 추가가 필요한 내용은 이메일을 통해 전달바랍니다.
@@ -20,7 +20,7 @@
 
 ## 환경 설정
 - 개발 PC 사양 및 환경
-  - Android와 iOS 모두 사용하는 대신 제한적이지만 웹 테스트 환경에서 개발을 진행
+  - Android와 iOS 모두 사용하지 않고, 제한적이지만 웹 테스트 환경에서 개발을 진행
   - [참고 링크](https://medium.com/flutter-korea/flutter-vscode%EB%A1%9C-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-edbe44a178c5)
 ```
 운영체제     macOS Big Sur 11.2.1
@@ -34,43 +34,65 @@
           VSCode 사용, 크롬 웹 환경을 통해 테스트 진행 
 ```
 
-<br>1. Flutter [SDK 다운 링크](https://flutter-ko.dev/) (2021년 4월 기준)
-<br>시작하기 
-<br>![web_home](image_for_md/web_home.png)
-<br>각 PC에 맞는 OS 선택 
-<br>![web_start](image_for_md/web_start.png)
-<br>flutter_macos_2.0.5-stable.zip 다운로드
-<br>![web_download](image_for_md/web_download.png)
+1. Flutter [SDK 다운 링크](https://flutter-ko.dev/) (2021년 4월 기준)
+![web_home](image_for_md/web_home.png)<br>
 
-<br>2. 사용할 폴더에 압축 해제
-<br>SDK를 저장할 장소를 선택하여 압축 해제, 해제시 아래와 유사한 내용이 포함됨(폴더명 flutterd)
-<br>![sdk_folder](image_for_md/sdk_folder.png)
+2. 각 PC에 맞는 OS 선택 
+![web_start](image_for_md/web_start.png)<br>
 
-<br>3. 환경변수에 flutter/bin 추가
+3. flutter_macos_2.0.5-stable.zip 다운로드
+![web_download](image_for_md/web_download.png)<br>
+
+4. SDK를 저장할 장소를 선택하여 압축 해제(압축 해제 시)
+![sdk_folder](image_for_md/sdk_folder.png)<br>
+
+5. 환경변수에 flutter/bin 추가
 ```sh
 export PATH="$PATH:`pwd`/flutter/bin"
 ```
 
-<br>4. flutter doctor 실행
+6. flutter doctor 실행
 <br>설치 혹은 설정이 필요하다고 필요하다고 생각되는 부분은 진행
-<br>![doctor](image_for_md/doctor.png)
+![doctor](image_for_md/doctor.png)<br>
 
-<br>5. VSCode [설치 링크](https://code.visualstudio.com/)
+7. VSCode [설치 링크](https://code.visualstudio.com/)
 <br>각 운영 체제에 맞는 버전 설치
 
-<br>6. extension에서 flutter플러그인을 설치 후 재 실행
-<br>![extension](image_for_md/extension.png)
+8. extension에서 flutter플러그인을 설치 후 재 실행
+![extension](image_for_md/extension.png)<br>
+
+-----------
 
 ## hello_flutter
-Flutter의 가장 기본이 되는 프로젝트로 이 Git repository 에 저장된 모든 프로젝트는 해당 프로젝트를 수정하여 발전시킨 형태
+Flutter의 가장 기본이 되는 프로젝트로 이 Git 에 저장된 모든 flutter 프로젝트는 해당 프로젝트를 수정하여 발전시킨 형태
 
-<br>1. VSCode 에서 command + Shift + P
-<br>2. Flutter: New Application Project
-<br>3. 프로젝트 생성 폴더 선택
-<br>4. 프로젝트명 입력
-<br>5. 3.)에서 선택한 폴더 하위에 프로젝트 파일이 생성됨
-<br>6. VSCode가 재 실행되며 프로젝트 파일이 열림
-<br>7. 필요에 따라 flutter SDK 경로를 입력
-<br>8. main.dart 파일이 자동으로 열리면 Run / Start Debugging 
-<br>9. 별도의 시작 환경을 지정하지 않으면 크롬 웹에 flutter 기본 앱이 나오게 됨
+### VScode Flutter 프로젝트 생성하기
+1. VSCode 에서 command + Shift + P
+2. Flutter: New Application Project 입력 혹은 선택
+![new_app](image_for_md/new_app.png)<br>
 
+3. 처음 진행 시, 필요에 따라 flutter SDK 경로를 입력(Locate SDK)
+![choose_sdk](image_for_md/choose_sdk.png)<br>
+
+4. SDK의 경로는 환경 설정 과정에서 sdk.zip의 압축을 푼 경로
+![sdk_path](image_for_md/sdk_path.png)<br>
+
+5. 프로젝트 생성 폴더 선택
+![choose_project_root](image_for_md/choose_project_root.png)<br>
+
+5. 프로젝트명 입력
+![enter_project_name](image_for_md/enter_project_name.png)<br>
+
+6. 3.)에서 선택한 폴더 하위에 프로젝트 별로 폴더가 생성됨
+![created_project](image_for_md/created_project.png)<br>
+
+7. VSCode가 재실행되며 프로젝트 파일이 열림
+8. main.dart 파일이 자동으로 열리면 프로젝트 생성 완료
+![new_vscode](image_for_md/new_vscode.png)<br>
+
+### 기본 앱 실행 시키기
+1. main.dart에서 Run / Start Debugging 혹은 F5
+![start_debugging](image_for_md/start_debugging.png)<br>
+
+2. 잠시 대기 후 크롬에서 flutter 기본 앱이 나오게 됨
+![hello_flutter_app](image_for_md/hello_flutter_app.png)<br>
