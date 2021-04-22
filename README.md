@@ -35,16 +35,16 @@
 ```
 
 1. Flutter [SDK 다운 링크](https://flutter-ko.dev/) (2021년 4월 기준)
-![web_home](image_for_md/web_home.png)<br>
+<br>![web_home](image_for_md/web_home.png)<br>
 
 2. 각 PC에 맞는 OS 선택 
-![web_start](image_for_md/web_start.png)<br>
+<br>![web_start](image_for_md/web_start.png)<br>
 
 3. flutter_macos_2.0.5-stable.zip 다운로드
-![web_download](image_for_md/web_download.png)<br>
+<br>![web_download](image_for_md/web_download.png)<br>
 
 4. SDK를 저장할 장소를 선택하여 압축 해제(압축 해제 시)
-![sdk_folder](image_for_md/sdk_folder.png)<br>
+<br>![sdk_folder](image_for_md/sdk_folder.png)<br>
 
 5. 환경변수에 flutter/bin 추가
 ```sh
@@ -53,13 +53,13 @@ export PATH="$PATH:`pwd`/flutter/bin"
 
 6. flutter doctor 실행
 <br>설치 혹은 설정이 필요하다고 필요하다고 생각되는 부분은 진행
-![doctor](image_for_md/doctor.png)<br>
+<br>![doctor](image_for_md/doctor.png)<br>
 
 7. VSCode [설치 링크](https://code.visualstudio.com/)
 <br>각 운영 체제에 맞는 버전 설치
 
 8. extension에서 flutter플러그인을 설치 후 재 실행
-![extension](image_for_md/extension.png)<br>
+<br>![extension](image_for_md/extension.png)<br>
 
 -----------
 
