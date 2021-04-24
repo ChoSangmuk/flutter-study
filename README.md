@@ -64,4 +64,19 @@ export PATH="$PATH:`pwd`/flutter/bin"
 -----------
 
 ## [hello_flutter](/hello_flutter)
-Flutter의 가장 기본이 되는 프로젝트로 이 Git 에 저장된 모든 flutter 프로젝트는 해당 프로젝트를 수정하여 발전시킨 형태
+- Flutter의 가장 기본이 되는 프로젝트로 이 Git 에 저장된 모든 flutter 프로젝트는 해당 프로젝트를 수정하여 발전시킨 형태
+
+## [basic_concept_flutter](/basic_concept_flutter)
+- Flutter의 기본 개념을 익히기 위해 작성한 프로젝트
+
+## [my_card_flutter](/my_card_flutter)
+- 로컬 PC의 폰트, 이미지 사용하기 
+
+## [dice_flutter](/dice_flutter)
+- stateful widget 생성 연습, 주사위 게임 프로젝트
+
+## [xylophone_flutter](/xylophone_flutter)
+- 패키지 활용 연습, 실로폰 프로젝트
+
+## [weather_flutter](/weather_flutter)
+- 화면 간 이동 및 날씨 API 활용, 날씨 앱 프로젝트

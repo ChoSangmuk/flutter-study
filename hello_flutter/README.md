@@ -1,5 +1,5 @@
 # hello_flutter
-Flutter의 가장 기본이 되는 프로젝트로 이 Git 에 저장된 모든 flutter 프로젝트는 해당 프로젝트를 수정하여 발전시킨 형태
+- Flutter의 가장 기본이 되는 프로젝트로 이 Git 에 저장된 모든 flutter 프로젝트는 해당 프로젝트를 수정하여 발전시킨 형태
 
 ## VScode Flutter 프로젝트 생성하기
 1. VSCode 에서 command + Shift + P
