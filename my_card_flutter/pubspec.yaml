@@ -45,6 +45,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+
+  # 해당 폴더의 자산을 사용하겠다고 명시
   assets:
     - assets/
 
@@ -59,6 +61,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  # 해당 폰트를 가져오도록 정의
   fonts:
     - family: NanumPenScript
       fonts:
