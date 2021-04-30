@@ -69,6 +69,9 @@ export PATH="$PATH:`pwd`/flutter/bin"
 ## [basic_concept_flutter](/basic_concept_flutter)
 - Flutter의 기본 개념을 익히기 위해 작성한 프로젝트
 
+## [advanced_concept_flutter](/advanced_concept_flutter)
+- Flutter의 추가 학습을 위해 작성한 프로젝트
+
 ## [my_card_flutter](/my_card_flutter)
 - 로컬 PC의 폰트, 이미지 사용하기 
 
