@@ -16,21 +16,14 @@ void main() {
   );
 }
 
-class DicePage extends StatefulWidget {
-  @override
-  _DicePageState createState() => _DicePageState();
-}
-
-class _DicePageState extends State<DicePage> {
+class DicePage extends StatelessWidget {
   int _firstDiceNumber = 1;
   int _secondDiceNumber = 6;
 
   void _rollDice() {
     Random random = Random();
-    setState(() {
-      _firstDiceNumber = random.nextInt(6) + 1;
-      _secondDiceNumber = random.nextInt(6) + 1;
-    });
+    _firstDiceNumber = random.nextInt(6) + 1;
+    _secondDiceNumber = random.nextInt(6) + 1;
   }
 
   @override
@@ -43,7 +36,9 @@ class _DicePageState extends State<DicePage> {
               padding: EdgeInsets.all(8),
               child: GestureDetector(
                 onTap: () {
+                  print("onTap first Dice ");
                   _rollDice();
+                  print('images/dice$_firstDiceNumber.png');
                 },
                 child: Image.asset('images/dice$_firstDiceNumber.png'),
               ),
@@ -54,7 +49,9 @@ class _DicePageState extends State<DicePage> {
               padding: EdgeInsets.all(8),
               child: TextButton(
                 onPressed: () {
+                  print("onPressed Second Dice ");
                   _rollDice();
+                  print('images/dice$_secondDiceNumber.png');
                 },
                 child: Image.asset('images/dice$_secondDiceNumber.png'),
               ),
