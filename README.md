@@ -81,5 +81,8 @@ export PATH="$PATH:`pwd`/flutter/bin"
 ## [xylophone_flutter](/xylophone_flutter)
 - 패키지 활용 연습, 실로폰 프로젝트
 
+## [navigation_flutter](/navigation_flutter)
+- 네비게이션을 통한 화면 이동 예제
+
 ## [weather_flutter](/weather_flutter)
 - 화면 간 이동 및 날씨 API 활용, 날씨 앱 프로젝트
