@@ -6,7 +6,7 @@
 2. [Named route로의 화면 전환](https://flutter-ko.dev/docs/cookbook/navigation/named-routes)
 3. [인자를 named route로 전달하기](https://flutter-ko.dev/docs/cookbook/navigation/navigate-with-arguments)
 4. [이전 화면에 데이터 반환하기](https://flutter-ko.dev/docs/cookbook/navigation/returning-data)
-5. [새로운 화면으로 데이터 보내기](https://flutter-ko.dev/docs/cookbook/navigation/passing-data)
+5. [~~새로운 화면으로 데이터 보내기~~](https://flutter-ko.dev/docs/cookbook/navigation/passing-data) -> [basic_concept_flutter : Create an infinite scrolling ListView](https://github.com/ChoSangmuk/flutter-study/tree/master/basic_concept_flutter#create-an-infinite-scrolling-listview) 참고
 
 ## 1. 새로운 화면으로 이동하고, 되돌아오기
 - Flutter에서 screen 과 page (화면)는 route라함
@@ -160,12 +160,8 @@ class ReceiverScreen extends StatelessWidget {
     final ScreenArguments args = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(args.title),
-      ),
-      body: Center(
-        child: Text(args.message),
-      ),
+      appBar: AppBar(title: Text(args.title),),
+      body: Center(child: Text(args.message),),
     );
   }
 }
@@ -175,9 +171,7 @@ class SenderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home Screen'),
-      ),
+      appBar: AppBar(title: Text('Home Screen'),),
       body: Center(
         child: ElevatedButton(
           child: Text("Navigate to screen that extracts arguments"),
@@ -199,3 +193,76 @@ class SenderScreen extends StatelessWidget {
 }
 ```
 <br>![navigate-with-arguments](../image_for_md/navigate-with-arguments.png)<br>
+
+## 4. 이전 화면에 데이터 반환하기
+- Navigator.pop(context, data)에 2번째 인자값(data)을 사용하여 이전 route로 데이터를 전달 가능
+- async, await 를 통해 이전 화면이 종료될때까지 기다렸다가 받은 데이터를 snackbar에 표시
+  - async, await 가 없는 경우 화면이 나타나는 동시에 snackbar에 의미 없는 값이 표시됨
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(title: 'Returning Data', home: HomeScreen()));
+
+// 1. SelectionButton을 터치하면 옵션을 선택할 수 있는 Route(SelectionScreen)을 호출하는 화면
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Returning Data Demo'),),
+      body: Center(child: SelectionButton(),),
+    );
+  }
+}
+
+class SelectionButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      child: Text('Is it good app? Pick an option, any option!'),
+      onPressed: () => _navigateAndDisplaySelection(context),
+    );
+  }
+
+  // 2. SelectionScreen을 띄우고 navigator.pop으로부터 결과를 기다리는 메서드
+  _navigateAndDisplaySelection(BuildContext context) async {
+    // await Navigator.push는 Future를 반환하고, Navigator.pop이 호출된 이후 진행
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SelectionScreen()),
+    );
+
+    // 선택 창으로부터 결과 값을 받은 후, 이전에 있던 snackbar는 숨기고 새로운 결과 값을 나타냄
+    ScaffoldMessenger.of(context)
+      ..removeCurrentSnackBar()
+      ..showSnackBar(SnackBar(content: Text("Your answer is $result.")));
+  }
+}
+
+// 3. 옵션선택 화면, Navigator.pop()을 사용하여 이전 route로 데이터를 전달
+class SelectionScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Pick an option')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _makeButton(context, 'Yep!'),
+            _makeButton(context, 'Nope.'),
+            _makeButton(context, 'Hmmm...'),
+          ],
+        ),
+      ),
+    );
+  }
+
+  ElevatedButton _makeButton(BuildContext context, String message) {
+    return ElevatedButton(
+      onPressed: () => Navigator.pop(context, message),
+      child: Text(message),
+    );
+  }
+}
+```
+<br>![navigate-returning-data](../image_for_md/navigate-returning-data.png)<br>
