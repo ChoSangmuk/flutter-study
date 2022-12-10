@@ -69,6 +69,9 @@ export PATH="$PATH:`pwd`/flutter/bin"
 ## [basic_concept_flutter](/basic_concept_flutter)
 - Flutter의 기본 개념을 익히기 위해 작성한 프로젝트
 
+## [advanced_concept_flutter](/advanced_concept_flutter)
+- Flutter의 추가 학습을 위해 작성한 프로젝트
+
 ## [my_card_flutter](/my_card_flutter)
 - 로컬 PC의 폰트, 이미지 사용하기 
 
@@ -77,6 +80,9 @@ export PATH="$PATH:`pwd`/flutter/bin"
 
 ## [xylophone_flutter](/xylophone_flutter)
 - 패키지 활용 연습, 실로폰 프로젝트
+
+## [navigation_flutter](/navigation_flutter)
+- 네비게이션을 통한 화면 이동 예제
 
 ## [weather_flutter](/weather_flutter)
 - 화면 간 이동 및 날씨 API 활용, 날씨 앱 프로젝트
